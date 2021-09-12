@@ -1,0 +1,42 @@
+parameters:
+    # Adds a fallback DATABASE_URL if the env var is not set.
+    # This allows you to run cache:warmup even if your
+    # environment variables are not available yet.
+    # You should not need to change this value.
+    env(DATABASE_URL): ''
+
+doctrine:
+    dbal:
+        default_connection:   default
+        connections:
+            default:
+                # configure these for your database server
+                driver: 'oci8'
+                server_version: '11.2.0.3.0'
+                host:                 milsidprd
+                port:                 1521
+                user:                 v500
+                password:             v500
+                # Oracle specific. Overrules dbname parameter if given and used as SERVICE_NAME or SID connection
+                # parameter for Oracle depending on the service parameter.
+                servicename:          prodro1
+                charset: utf8
+                default_table_options:
+                    charset: utf8
+                    collate: utf8
+            logs_db:
+                # configure these for your database server
+                driver: 'oci8'
+                server_version: '11.2.0.3.0'
+                host:                 athenaprd1vip
+                port:                 1521
+                user:                 chun
+                password:             cHun_fr44
+                # Oracle specific. Overrules dbname parameter if given and used as SERVICE_NAME or SID connection
+                # parameter for Oracle depending on the service parameter.
+                servicename:          prod1
+                charset: utf8
+                default_table_options:
+                    charset: utf8
+                    collate: utf8
+

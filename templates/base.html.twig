@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
+        <meta content='APPLINK' name='discern'> 
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="shortcut icon" href="/img/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/datatables.jszip.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/general.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/fancytree/src/skin-win8/ui.fancytree.css">
+        <link rel="stylesheet" type="text/css" href="/css/sweetAlert/sweetalert2.min.css">
+
+        <script type="text/javascript" src="/js/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/popper.min.js"></script>
+        <script type="text/javascript" src="/js/polyfill/polyfill.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/datatables.min.js"></script>
+        <script type="text/javascript" src="/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="/js/pdfmake.min.js"></script>
+        <script type="text/javascript" src="/js/vfs_fonts.js"></script>
+        <script type="text/javascript" src="/js/jszip.min.js"></script>
+        <script type="text/javascript" src="/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="/js/fancytree/src/jquery.fancytree.js"></script>
+        <script type="text/javascript" src="/js/sweetAlert/sweetalert2.min.js"></script>
+        <script type="text/javascript" src="/js/moment.js"></script>
+
+        <script type="text/javascript" src="/js/datetime-moment.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {{ include('inc/navbar.html.twig') }}
+        <div class="container page-wrapper ">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

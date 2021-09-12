@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listes paramédicaux{% endblock %}
+
+{% block body %}
+    <h5 id="pageTitle" class="text-center"></h5>
+    <input type="hidden" id="userId" name="userId" value={{ userId }} />
+    <img id="logo_chu" src="/img/logo_chu.png" />
+    <div id="initInfo">
+      Cliquer sur le lien "Configuration" dans le bandeau afin de charger une liste paramédicale.
+    </div>
+    <div class="modal fade" id="configModal" role="dialog">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Configuration</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <button type="button" id="btnDeselectAll" class="btn btn-secondary btn-sm">Tout décocher</button><br />
+
+            <div id="tree">
+            </div>
+
+            <div class="separation">
+            </div>
+            
+            <div id="ListeUfs">
+              <div class="radio-toolbar">
+                <input type="radio" id="diet" name="radioParamed" value="diet" checked>
+                <label for="diet">Diéteticienne</label>
+                <input type="radio" id="kine" name="radioParamed" value="kine">
+                <label for="kine">Kinésithérapeute</label>
+                <input type="radio" id="orth" name="radioParamed" value="orth">
+                <label for="orth">Orthophoniste</label>
+                <input type="radio" id="ergo" name="radioParamed" value="ergo">
+                <label for="ergo">Ergothérapeute</label> 
+                <input type="radio" id="podo" name="radioParamed" value="podo">
+                <label for="podo">Pédicure - Podologue</label> 
+                <input type="radio" id="educ" name="radioParamed" value="educ">
+                <label for="educ">Educateur sportif</label> 
+                <input type="radio" id="psyc" name="radioParamed" value="psyc">
+                <label for="psyc">Psychomotricien</label> 
+                <input type="radio" id="side" name="radioParamed" value="side">
+                <label for="side">Soins infirmiers</label>
+                <input type="radio" id="stom" name="radioParamed" value="stom">
+                <label for="stom">Stomathérapeute</label> 
+              </div>
+            </div>
+            
+            <div class="clear">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button type="button"  id="btnSubmit" class="btn btn-primary" data-dismiss="modal">Rechercher</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table id="person" class="table table-striped display table-hover">
+        <thead>
+            <tr>
+                <th>IPP</th>
+                <th>Nom</th>
+                <th>Date de naissance</th>
+                <th>Unité</th>
+                <th>Chambre</th>
+                <th>Lit</th>
+                <th>Prescription</th>
+                <th>Date prescription</th>
+                <th>Prescripteur</th>
+            </tr>
+        </thead>
+    </table>
+{% endblock %}
+
+{% block javascripts %}{% endblock %}
